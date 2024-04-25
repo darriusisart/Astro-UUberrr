@@ -76,4 +76,14 @@ public class FallingItems : MonoBehaviour
             Debug.LogError("Rigidbody2D component not found on the falling item prefab.");
         }
     }
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("lazer") || collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("item has been hit");
+            Destroy(gameObject);
+        }
+    }
 }

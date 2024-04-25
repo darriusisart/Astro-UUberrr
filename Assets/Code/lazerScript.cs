@@ -29,7 +29,7 @@ public class LaserScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // Add tag checks here depending on what your laser should interact with, e.g., "Enemy"
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("FallingItem") || other.CompareTag("Item"))
         {
             // Here you could add effects like damage to the enemy, play sounds, etc.
             Debug.Log("Laser hit the item!");
