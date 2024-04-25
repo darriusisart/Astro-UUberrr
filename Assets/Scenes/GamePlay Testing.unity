@@ -515,11 +515,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2761401621701234146, guid: aba959c6df817394eaaa8658353e7412, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.83
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 2761401621701234146, guid: aba959c6df817394eaaa8658353e7412, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.07
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2761401621701234146, guid: aba959c6df817394eaaa8658353e7412, type: 3}
       propertyPath: m_LocalPosition.z
@@ -558,12 +558,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6575648416374007727, guid: aba959c6df817394eaaa8658353e7412, type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 5643477997584551422, guid: 9d613f3f70d2e6644ba43d5d4ba076bd, type: 3}
+    - target: {fileID: 6575648416374007727, guid: aba959c6df817394eaaa8658353e7412, type: 3}
       propertyPath: MovementSpeed.x
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6575648416374007727, guid: aba959c6df817394eaaa8658353e7412, type: 3}
       propertyPath: MovementSpeed.y
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631977942659941158, guid: aba959c6df817394eaaa8658353e7412, type: 3}
+      propertyPath: m_Size.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631977942659941158, guid: aba959c6df817394eaaa8658353e7412, type: 3}
+      propertyPath: m_Size.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
