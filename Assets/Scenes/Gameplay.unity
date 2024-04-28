@@ -343,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8647896167265349584, guid: 7539eeae3fa0e74469a55ba6370bf3e5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8647896167265349584, guid: 7539eeae3fa0e74469a55ba6370bf3e5, type: 3}
       propertyPath: scrollSpeed
@@ -362,6 +362,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101703109439678336, guid: b3eb04aa68eac4d4f907545818b3cf45, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2678595408933329121, guid: b3eb04aa68eac4d4f907545818b3cf45, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.37655267
@@ -405,6 +409,18 @@ PrefabInstance:
     - target: {fileID: 2681275310281657728, guid: b3eb04aa68eac4d4f907545818b3cf45, type: 3}
       propertyPath: m_Name
       value: Background 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681275310281657728, guid: b3eb04aa68eac4d4f907545818b3cf45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451620233405541600, guid: b3eb04aa68eac4d4f907545818b3cf45, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782989983212923230, guid: b3eb04aa68eac4d4f907545818b3cf45, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -498,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8647896167265349584, guid: 7539eeae3fa0e74469a55ba6370bf3e5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8647896167265349584, guid: 7539eeae3fa0e74469a55ba6370bf3e5, type: 3}
       propertyPath: scrollSpeed
@@ -561,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6575648416374007727, guid: aba959c6df817394eaaa8658353e7412, type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 3767123376420434401, guid: 9d613f3f70d2e6644ba43d5d4ba076bd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -650,6 +670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Falling Objects
       objectReference: {fileID: 0}
+    - target: {fileID: 2697970146739452749, guid: efa2870457dce034f82f2de51e9d2015, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7595470453879689041, guid: efa2870457dce034f82f2de51e9d2015, type: 3}
       propertyPath: maxX
       value: 20
@@ -664,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595470453879689041, guid: efa2870457dce034f82f2de51e9d2015, type: 3}
       propertyPath: spawnInterval
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343962846905264193, guid: efa2870457dce034f82f2de51e9d2015, type: 3}
       propertyPath: m_LocalPosition.x
