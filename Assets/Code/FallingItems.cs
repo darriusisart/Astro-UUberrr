@@ -11,32 +11,20 @@ public class FallingItems : MonoBehaviour
     public float spawnRangeX = 14.0f; // Range of x positions for spawning items
     public float minRotation = -45f; // Minimum rotation angle
     public float maxRotation = 45f; // Maximum rotation angle
-    public float minHorizontalSpeed = -2.0f; // Minimum horizontal speed of falling items
-    public float maxHorizontalSpeed = 2.0f; // Maximum horizontal speed of falling items
     public int maxSpawnedItems = 10; // Maximum number of items spawned at a time
     private int currentSpawnedItems = 0; // Current number of spawned items
-    private float timer = 0f; // Timer for spawning items
 
-    private void Update()
+    private void Start()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= spawnInterval && currentSpawnedItems < maxSpawnedItems)
-        {
-            SpawnItem();
-            timer = 0f;
-        }
-
-        // Check if any spawned items have been destroyed
-        GameObject[] spawnedItems = GameObject.FindGameObjectsWithTag("FallingItem");
-        currentSpawnedItems = spawnedItems.Length;
+        // Start spawning items at intervals
+        InvokeRepeating("SpawnItem", 0.0f, spawnInterval);
     }
 
     private void SpawnItem()
     {
-        if (possibleSprites.Length == 0)
+        if (currentSpawnedItems >= maxSpawnedItems || possibleSprites.Length == 0)
         {
-            return; // No sprites available, don't spawn more items
+            return; // Limit reached or no sprites available, don't spawn more items
         }
 
         // Randomly select a sprite
@@ -64,16 +52,13 @@ public class FallingItems : MonoBehaviour
         float randomRotation = Random.Range(minRotation, maxRotation);
         newFallingItem.transform.rotation = Quaternion.Euler(0f, 0f, randomRotation);
 
-        // Randomly set horizontal speed
-        Rigidbody2D rb = newFallingItem.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            float horizontalSpeed = Random.Range(minHorizontalSpeed, maxHorizontalSpeed);
-            rb.velocity = new Vector2(horizontalSpeed, 0f);
-        }
-        else
-        {
-            Debug.LogError("Rigidbody2D component not found on the falling item prefab.");
-        }
+        currentSpawnedItems++;
+    }
+
+    private void Update()
+    {
+        // Check if any spawned items have been destroyed
+        GameObject[] spawnedItems = GameObject.FindGameObjectsWithTag("FallingItem");
+        currentSpawnedItems = spawnedItems.Length;
     }
 }

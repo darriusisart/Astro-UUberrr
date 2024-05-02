@@ -6,12 +6,12 @@ TagManager:
   tags:
   - Title
   - FallingItem
-  - Item
+  - border
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - -1
+  - 
   - Water
   - UI
   - 
