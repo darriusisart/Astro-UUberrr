@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2697970146739452749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8343962846905264193}
+  - component: {fileID: 7595470453879689041}
+  m_Layer: 0
+  m_Name: Falling Objects
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8343962846905264193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697970146739452749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4, y: 51.2, z: -1.1224113}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7595470453879689041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697970146739452749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2e4a2d93b014c0f93e0fd739711bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleSprites:
+  - {fileID: 21300000, guid: cfe16c2d1bade4cccaef49f6b77588b3, type: 3}
+  - {fileID: 21300000, guid: 29243722a2cce407b9a907c1a74a6545, type: 3}
+  - {fileID: 21300000, guid: df2fa57d0a77342ef8afc4fd16716fb6, type: 3}
+  fallingItemPrefab: {fileID: 2697970146739452749}
+  spawnInterval: 0.5
+  spawnHeight: 40
+  spawnRangeX: 14
+  minRotation: -45
+  maxRotation: 45
+  minHorizontalSpeed: -2
+  maxHorizontalSpeed: 2
+  maxSpawnedItems: 10

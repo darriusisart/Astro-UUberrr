@@ -1,64 +1,69 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingItems : MonoBehaviour
 {
-    public Sprite[] possibleSprites; // Array of sprites to choose from
-    public GameObject fallingItemPrefab; // Prefab of the falling item
-    public float spawnInterval = 1.0f; // Interval between spawning items
-    public float spawnHeight = 20.0f; // Height from which items are spawned
-    public float spawnRangeX = 14.0f; // Range of x positions for spawning items
-    public float minRotation = -45f; // Minimum rotation angle
-    public float maxRotation = 45f; // Maximum rotation angle
-    public int maxSpawnedItems = 10; // Maximum number of items spawned at a time
-    private int currentSpawnedItems = 0; // Current number of spawned items
+    public Sprite[] possibleSprites;
+    public GameObject fallingItemPrefab;
+    public float spawnInterval = 1.0f;
+    public float spawnHeight = 20.0f;
+    public float spawnRangeX = 14.0f;
+    public float minRotation = -45f;
+    public float maxRotation = 45f;
+    public float minHorizontalSpeed = -2.0f;
+    public float maxHorizontalSpeed = 2.0f;
+    public int maxSpawnedItems = 10;
+    private int currentSpawnedItems = 0;
+    private float timer = 0f;
 
-    private void Start()
+    private void Update()
     {
-        // Start spawning items at intervals
-        InvokeRepeating("SpawnItem", 0.0f, spawnInterval);
+        timer += Time.deltaTime;
+
+        if (timer >= spawnInterval && currentSpawnedItems < maxSpawnedItems)
+        {
+            SpawnItem();
+            timer = 0f;
+        }
+
+        GameObject[] spawnedItems = GameObject.FindGameObjectsWithTag("FallingItem");
+        currentSpawnedItems = spawnedItems.Length;
     }
 
     private void SpawnItem()
     {
-        if (currentSpawnedItems >= maxSpawnedItems || possibleSprites.Length == 0)
+        if (possibleSprites.Length == 0)
         {
-            return; // Limit reached or no sprites available, don't spawn more items
+            return;
         }
 
-        // Randomly select a sprite
         Sprite spriteToUse = possibleSprites[Random.Range(0, possibleSprites.Length)];
-
-        // Randomly select a position within the spawn range
         float randomX = Random.Range(-spawnRangeX, spawnRangeX);
         Vector3 spawnPosition = new Vector3(randomX, spawnHeight, 0.0f);
 
-        // Instantiate the falling item
         GameObject newFallingItem = Instantiate(fallingItemPrefab, spawnPosition, Quaternion.identity);
 
-        // Set the sprite of the falling item
+        // Check if SpriteRenderer component exists, if not, add one
         SpriteRenderer spriteRenderer = newFallingItem.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
+        if (spriteRenderer == null)
         {
-            spriteRenderer.sprite = spriteToUse;
-        }
-        else
-        {
-            Debug.LogError("SpriteRenderer component not found on the falling item prefab.");
+            spriteRenderer = newFallingItem.AddComponent<SpriteRenderer>();
         }
 
-        // Randomly rotate the falling item
+        // Assign the sprite
+        spriteRenderer.sprite = spriteToUse;
+
         float randomRotation = Random.Range(minRotation, maxRotation);
         newFallingItem.transform.rotation = Quaternion.Euler(0f, 0f, randomRotation);
 
-        currentSpawnedItems++;
-    }
+        // Check if Rigidbody2D component exists, if not, add one
+        Rigidbody2D rb = newFallingItem.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = newFallingItem.AddComponent<Rigidbody2D>();
+        }
 
-    private void Update()
-    {
-        // Check if any spawned items have been destroyed
-        GameObject[] spawnedItems = GameObject.FindGameObjectsWithTag("FallingItem");
-        currentSpawnedItems = spawnedItems.Length;
+        // Set the horizontal speed
+        float horizontalSpeed = Random.Range(minHorizontalSpeed, maxHorizontalSpeed);
+        rb.velocity = new Vector2(horizontalSpeed, 0f);
     }
 }
