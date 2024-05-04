@@ -38,6 +38,6 @@ public class ScaleDownOverTime : MonoBehaviour
     void SwitchScene()
     {
         // Load the next scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Score");
     }
 }
