@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: {x: 20, y: 25}
+  health: 3
 --- !u!61 &215334190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1140,6 +1141,8 @@ MonoBehaviour:
   spawnRangeX: 14
   minRotation: -45
   maxRotation: 45
+  minHorizontalSpeed: -2
+  maxHorizontalSpeed: 2
   maxSpawnedItems: 10
 --- !u!4 &765555596
 Transform:
@@ -1930,7 +1933,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1650400107}
   - component: {fileID: 1650400106}
-  - component: {fileID: 1650400105}
   - component: {fileID: 1650400108}
   m_Layer: 0
   m_Name: ufo Copy28
@@ -1939,19 +1941,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1650400105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650400104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2250d6995b7f342b395dd3a63f1c81d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MovementSpeed: {x: 20, y: 25}
 --- !u!212 &1650400106
 SpriteRenderer:
   m_ObjectHideFlags: 0
