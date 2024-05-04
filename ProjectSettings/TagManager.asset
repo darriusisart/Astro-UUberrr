@@ -7,6 +7,8 @@ TagManager:
   - Title
   - FallingItem
   - Item
+  - lazer
+  - StartButton
   layers:
   - Default
   - TransparentFX
