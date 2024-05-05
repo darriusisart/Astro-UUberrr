@@ -87,8 +87,14 @@ EditorBuildSettings:
     path: Assets/Scenes/AlienCutscenes/25.unity
     guid: 864bbdc846f81429ebf2866e4ddf00ef
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
+    path: Assets/Scenes/Gameplay/Gameplay1.unity
     guid: ea504e73cc3111449926a223a433a4d6
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Gameplay2.unity
+    guid: d57bb79fdae4742128368ab9c28e5db5
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Gameplay3.unity
+    guid: 1e26a6ce0c83945a8987713b9b83af29
   - enabled: 1
     path: Assets/Scenes/PlanetCutscenes/1.unity
     guid: 50ffb396aaf9347e9aa8583a01b8cfc5

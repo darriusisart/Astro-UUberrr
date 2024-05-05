@@ -35,7 +35,13 @@ public class ScaleOverTime : MonoBehaviour
 
     void SwitchScene()
     {
-        // Load the next scene
-        SceneManager.LoadScene("Gameplay");
+        // Generate a random index to select one of the three scenes
+        int randomIndex = Random.Range(0, 3);
+
+        // List of scene names
+        string[] sceneNames = { "Gameplay1", "Gameplay2", "Gameplay3" };
+
+        // Load the randomly selected scene
+        SceneManager.LoadScene(sceneNames[randomIndex]);
     }
 }
