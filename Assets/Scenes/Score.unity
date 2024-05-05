@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberText: {fileID: 1052120378}
-  delay: 4
+  delay: 3.6
 --- !u!102 &1052120378
 TextMesh:
   serializedVersion: 3
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29341974122ca4ba1a3c21ad2a297696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchSceneTime: 9
+  switchSceneTime: 11
 --- !u!1 &1805242516
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberText: {fileID: 1805242519}
-  delay: 8.4
+  delay: 8.5
 --- !u!1 &1895649386
 GameObject:
   m_ObjectHideFlags: 0

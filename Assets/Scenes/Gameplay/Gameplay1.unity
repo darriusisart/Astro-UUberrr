@@ -203,6 +203,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269655135}
   m_CullTransparentMesh: 1
+--- !u!1 &310184845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6271837207378325546, guid: aba959c6df817394eaaa8658353e7412, type: 3}
+  m_PrefabInstance: {fileID: 879580894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &310184846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310184845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f1ced79f9d74218aa88d921fa8122d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobbleAngle: 10
+  wobbleSpeed: 5
+  blinkColor: {r: 1, g: 0, b: 0, a: 1}
+  blinkDuration: 0.1
+  blinkCount: 3
+  immunityDuration: 1
 --- !u!1 &450603210
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +779,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6271837207378325546, guid: aba959c6df817394eaaa8658353e7412, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 310184846}
   m_SourcePrefab: {fileID: 100100000, guid: aba959c6df817394eaaa8658353e7412, type: 3}
 --- !u!1001 &1205278383
 PrefabInstance:
@@ -927,8 +953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 3.63, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1556, y: -6}
-  m_SizeDelta: {x: 1822, y: 128}
+  m_AnchoredPosition: {x: 780, y: -26}
+  m_SizeDelta: {x: 911.44, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270877820
 MonoBehaviour:
@@ -1457,6 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1983660597}
   - component: {fileID: 1983660596}
+  - component: {fileID: 1983660599}
   m_Layer: 0
   m_Name: life3
   m_TagString: Untagged
@@ -1531,6 +1558,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1983660599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983660595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95dc6a92f8268384c91739c1a2bac998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 310184845}
+  maxHealth: 3
+  health: 0
 --- !u!1 &2059648885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059648887}
   - component: {fileID: 2059648886}
+  - component: {fileID: 2059648888}
   m_Layer: 0
   m_Name: life1
   m_TagString: Untagged
@@ -1615,6 +1658,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059648888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059648885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95dc6a92f8268384c91739c1a2bac998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 310184845}
+  maxHealth: 1
+  health: 0
 --- !u!1 &2093658365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093658367}
   - component: {fileID: 2093658366}
+  - component: {fileID: 2093658368}
   m_Layer: 0
   m_Name: life2
   m_TagString: Untagged
@@ -1699,6 +1758,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093658368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093658365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95dc6a92f8268384c91739c1a2bac998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 310184845}
+  maxHealth: 2
+  health: 0
 --- !u!1 &2093768199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2697970146739452749, guid: efa2870457dce034f82f2de51e9d2015, type: 3}

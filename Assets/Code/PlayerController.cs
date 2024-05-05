@@ -1,17 +1,21 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public Vector2 MovementSpeed = new Vector2(1.0f, 1.0f);
-    public int health = 3; // Starting health
+    public int maxHealth = 3; // Maximum health
+    private int health; // Current health
     private Rigidbody2D rigidbody2D;
     private Vector2 inputVector = new Vector2(0.0f, 0.0f);
     private BoxCollider2D boxCollider;
+    private Vector3 initialPosition;
 
     void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        initialPosition = transform.position;
 
         if (boxCollider == null)
         {
@@ -21,6 +25,8 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.angularDrag = 0.0f;
         rigidbody2D.gravityScale = 0.0f;
         rigidbody2D.isKinematic = true;
+
+        health = maxHealth;
     }
 
     void Update()
@@ -64,19 +70,56 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Item"))
         {
-            health--;
+            TakeDamage(collision.gameObject);
+        }
+    }
 
-            Debug.Log("Player collided with an item!");
+    public void TakeDamage(GameObject item)
+    {
+        health--;
 
-            if (health <= 0)
+        if (health <= 0)
+        {
+            health = 0;
+            Debug.Log("Player's health reached zero.");
+
+            if (!CheckGameOver())
             {
-                Debug.Log("Player's health reached zero. Destroying player...");
-                Destroy(gameObject);
-            }
-            else
-            {
-                Debug.Log("Player's health decreased to: " + health);
+                Respawn();
             }
         }
+        else
+        {
+            Debug.Log("Player's health decreased to: " + health);
+        }
+
+        DestroyItemAfterDamage(item);
+    }
+
+    void DestroyItemAfterDamage(GameObject item)
+    {
+        ItemDestroyer destroyer = item.GetComponent<ItemDestroyer>();
+        if (destroyer != null)
+        {
+          // destroyer.TakeDamage();
+        }
+    }
+
+    void Respawn()
+    {
+        health = maxHealth;
+        transform.position = initialPosition;
+        Debug.Log("Player respawned.");
+    }
+
+    bool CheckGameOver()
+    {
+        if (health <= 0)
+        {
+            Debug.Log("Game over! Player lost all lives.");
+            SceneManager.LoadScene("GameOverScene");
+            return true;
+        }
+        return false;
     }
 }
