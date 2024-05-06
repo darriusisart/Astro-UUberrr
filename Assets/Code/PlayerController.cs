@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputVector = new Vector2(0.0f, 0.0f);
     private BoxCollider2D boxCollider;
     private Vector3 initialPosition;
+    public GameObject[] healthIcons; // Array of health icons
 
     void Awake()
     {
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour
         rigidbody2D.isKinematic = true;
 
         health = maxHealth;
+
+        // Initialize health icons array
+        healthIcons = GameObject.FindGameObjectsWithTag("HealthIcon");
     }
 
     void Update()
@@ -91,6 +95,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.Log("Player's health decreased to: " + health);
+
+            // Deactivate a health icon
+            if (healthIcons.Length > 0)
+            {
+                healthIcons[health].SetActive(false);
+            }
         }
 
         DestroyItemAfterDamage(item);
