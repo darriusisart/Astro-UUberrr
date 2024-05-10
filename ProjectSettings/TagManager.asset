@@ -7,6 +7,11 @@ TagManager:
   - Title
   - FallingItem
   - border
+  - Item
+  - lazer
+  - GoHomeButton
+  - TryAgainButton
+  - HealthIcon
   layers:
   - Default
   - TransparentFX

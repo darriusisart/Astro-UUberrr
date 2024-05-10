@@ -7,7 +7,7 @@ public class TypeWriter : MonoBehaviour
     public TextMesh textMesh;
     public float initialDelay = 1.0f; // Initial delay before typing starts
     public float letterDelay = 0.1f; // Delay between each letter appearing
-    public float blinkDuration = 0.5f; // Duration of blinking animation
+    public float blinkDuration = 1.0f; // Duration of blinking animation
     public float blinkInterval = 1.0f; // Interval between blinks
     private string fullText;
     private float timeSinceLastLetter;
